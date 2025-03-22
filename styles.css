@@ -1,11 +1,12 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     background-color: #1a1a1a;
     color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -14,10 +15,41 @@ body {
     margin: 0 auto;
 }
 
+/* Loading Animation */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #ff6f61;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /* Header */
 header {
     background-color: #222;
     padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header .logo img {
@@ -35,27 +67,54 @@ nav ul li a {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
     color: #ff6f61;
 }
 
+#theme-toggle {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
 /* Hero Section */
 .hero {
     background: url('assets/images/hero-bg.jpg') no-repeat center center/cover;
-    padding: 100px 0;
+    padding: 150px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 2.5s ease-in-out;
 }
 
 .hero .btn {
@@ -66,10 +125,19 @@ nav ul li a:hover {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s;
+    animation: fadeIn 3s ease-in-out;
 }
 
 .hero .btn:hover {
     background-color: #e65a50;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Video Grid */
@@ -93,16 +161,22 @@ nav ul li a:hover {
     background-color: #333;
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .video-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .video-card img {
     width: 100%;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover img {
+    transform: scale(1.1);
 }
 
 .video-card h3 {
@@ -129,8 +203,54 @@ footer ul {
 footer ul li a {
     text-decoration: none;
     color: #ffffff;
+    transition: color 0.3s;
 }
 
 footer ul li a:hover {
     color: #ff6f61;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff6f61;
+}
+
+/* Dark Mode */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode header,
+body.light-mode footer {
+    background-color: #f8f9fa;
+}
+
+body.light-mode nav ul li a,
+body.light-mode footer ul li a {
+    color: #000000;
+}
+
+body.light-mode .video-card {
+    background-color: #f1f1f1;
+    color: #000000;
+}
+
+body.light-mode .btn {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+body.light-mode .btn:hover {
+    background-color: #0056b3;
 }
