@@ -3,41 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>About Us - Anime Clips Raw</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>About Us</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <button id="theme-toggle">Toggle Dark Mode</button>
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Anime Clips Raw Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h2>Our Story</h2>
-            <p>Learn more about who we are and what we do.</p>
-        </section>
-    </main>
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Welcome to Anime Clips Raw! We are dedicated to bringing you the latest and greatest anime moments in high quality. Our mission is to provide a platform where anime fans can enjoy raw clips, voiceovers, and more.</p>
+            <p>Our team is passionate about anime and committed to delivering the best content for our community. Join us on this journey and explore the world of anime like never before!</p>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Anime Clips Raw. All rights reserved.</p>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
     </footer>
 
-    <!-- Scroll-to-Top Button -->
-    <button id="scroll-to-top" title="Go to top">↑</button>
-
-    <!-- Vercel Analytics Script -->
-    <script defer src="https://www.vercel-analytics.com/v1/script.js"></script>
-
-    <!-- Custom JavaScript -->
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
