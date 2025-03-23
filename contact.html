@@ -6,7 +6,9 @@
     <title>Contact Us - Anime Clips Raw</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link <href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Add reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -15,7 +17,7 @@
             <div class="logo">
                 <img src="assets/images/logo.png" alt="Anime Clips Raw Logo">
             </div>
-            <nav>
+           <nav>
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -33,26 +35,32 @@
     <section class="contact">
         <div class="container">
             <h1>Contact Us</h1>
-            <form action="https://formspree.io/f/mnnpddrg" method="POST" class="contact-form">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+            <form action="https://formspree.io/f/mnnpddrg" method="POST" class="contact-form" id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required minlength="2">
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
 
-    <!-- Hidden fields for email customization -->
-    <input type="hidden" name="_subject" value="New Contact Form Submission">
-    <input type="hidden" name="_replyto" value="user-email"> <!-- Auto-reply to user -->
-    <input type="text" name="_gotcha" style="display:none"> <!-- Anti-spam -->
+                <!-- Add reCAPTCHA widget -->
+                <div class="g-recaptcha" data-sitekey="6LfTJf0qAAAAAC4HmFOGAPnWt8qAfswO_xcZz8PT"></div>
 
-    <!-- Redirect to a Thank You page -->
-    <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                <!-- Hidden fields for email customization -->
+                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                <input type="hidden" name="_replyto" value="user-email">
+                <input type="text" name="_gotcha" style="display:none">
 
-    <button type="submit" class="btn">Send Message</button>
-</form>
+                <!-- Redirect to a Thank You page -->
+                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+                <!-- Loading Spinner -->
+                <div class="loading-spinner" id="loading-spinner"></div>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
         </div>
     </section>
 
