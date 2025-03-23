@@ -33,18 +33,26 @@
     <section class="contact">
         <div class="container">
             <h1>Contact Us</h1>
-            <form class="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+            <form action="https://formspree.io/f/mnnpddrg" method="POST" class="contact-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
 
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+    <!-- Hidden fields for email customization -->
+    <input type="hidden" name="_subject" value="New Contact Form Submission">
+    <input type="hidden" name="_replyto" value="user-email"> <!-- Auto-reply to user -->
+    <input type="text" name="_gotcha" style="display:none"> <!-- Anti-spam -->
+
+    <!-- Redirect to a Thank You page -->
+    <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+    <button type="submit" class="btn">Send Message</button>
+</form>
         </div>
     </section>
 
