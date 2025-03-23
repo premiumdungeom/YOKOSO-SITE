@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Clips Raw</title>
+    <title>Anime zone</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loading Animation -->
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -16,26 +21,50 @@
                 <img src="assets/images/logo.png" alt="Anime Clips Raw Logo">
             </div>
             <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="videos.html">Videos</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="store.html">Store</a></li>
-                </ul>
-            </nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+</nav>
             <button id="theme-toggle"><i class="fas fa-moon"></i></button>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Watch Raw Anime Clips</h1>
+            <h1>Get Your Anime Clips</h1>
             <p>Explore the latest and greatest anime moments in high quality.</p>
-            <a href="videos.html" class="btn">Watch Now</a>
+            <a href="#" class="btn">Watch Now</a>
+        </div>
+    </section>
+
+    <!-- Video Grid -->
+    <section class="video-grid">
+        <div class="container">
+            <h2>Latest Clips</h2>
+            <div class="grid">
+                <div class="video-card">
+                    <img src="assets/images/thumbnail1.jpg" alt="Video Thumbnail">
+                    <h3>Latest Action Anime</h3>
+                </div>
+                <div class="video-card">
+                    <img src="assets/images/thumbnail2.jpg" alt="Video Thumbnail">
+                    <h3>Voice Overs</h3>
+                </div>
+                <div class="video-card">
+                    <img src="assets/images/thumbnail3.jpg" alt="Video Thumbnail">
+                    <h3>Twixtor</h3>
+                </div>
+                <div class="video-card">
+                    <img src="assets/images/thumbnail4.jpg" alt="Video Thumbnail">
+                    <h3>Anime Updates</h3>
+                </div>
+                <!-- Add more video cards as needed -->
+            </div>
         </div>
     </section>
 
