@@ -112,6 +112,120 @@ nav ul li a:hover {
     to { opacity: 1; }
 }
 
+/* Gallery Section */
+.gallery {
+    padding: 50px 0;
+}
+
+.gallery h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    transition: bottom 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    bottom: 0;
+}
+
+/* Store Section */
+.store {
+    padding: 50px 0;
+}
+
+.store h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.store-item {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.store-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.store-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.store-item h3 {
+    margin: 15px 0 10px;
+    font-size: 1.5rem;
+}
+
+.store-item p {
+    font-size: 1.2rem;
+    color: #ff6f61;
+    margin-bottom: 15px;
+}
+
+.store-item .btn {
+    background-color: #ff6f61;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.store-item .btn:hover {
+    background-color: #e65a50;
+}
+
 /* Footer */
 footer {
     background-color: #222;
