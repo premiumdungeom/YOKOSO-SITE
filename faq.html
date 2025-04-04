@@ -9,17 +9,123 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
+
+    <style>
+        /* Reset and Base Styles */
+ 
+ 
+ 
+ /* Header Styles */
+ header {
+     background-color: #2e2e2e;
+     color: rgb(255, 255, 255);
+     padding: 1rem 2rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .logo {
+     font-size: 1.8rem;
+     font-weight: bold;
+     letter-spacing: 1px;
+     
+ }
+ 
+ .logo span {
+     color: #e74c3c;
+ }
+ 
+ .for-editor {
+     font-size: 0.9rem;
+     opacity: 0.8;
+ }
+
+ .grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 35px;
+ text-align: center;
+ transform: translateY(-25px);
+}
+
+#theme-toggle {
+ background: none;
+ border: none;
+ color: #ffffff;
+ font-size: 1.2rem;
+ cursor: pointer;
+}
+
+/* Hamburger Menu for Mobile */
+#menu-toggle {
+ display: none; /* Hidden by default */
+ background: none;
+ border: none;
+ color: #ffffff;
+ font-size: 1.5rem;
+ cursor: pointer;
+}
+
+
+/* Navigation */
+nav {
+ 
+ padding: 0rem 0rem;
+}
+
+nav ul {
+ display: flex;
+ list-style: none;
+ padding: 0;
+ gap: 10px;
+ 
+}
+
+nav li {
+ margin-right: 1.5rem;
+}
+
+nav a {
+ color: rgb(255, 255, 255);
+ text-decoration: none;
+ font-weight: 500;
+ transition: color 0.3s;
+ position: relative;
+}
+
+nav a:hover {
+ color: #e74c3c;
+}
+
+nav a.active::after {
+ content: '';
+ position: absolute;
+ bottom: -5px;
+ left: 0;
+ width: 100%;
+ height: 2px;
+ background-color: #e74c3c;
+}
+
+
+ </style>
+
+     <!-- Header -->
+     <header>
+        <div class="logo">ANIME<span>ZONE</span></div>
+        
+    </header>
+
+
     <header>
         <div class="container">
-            <div class="logo">
-                <img src="assets/images/logo.png" alt="Anime Clips Raw Logo">
-            </div>
+            
             <nav>
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="videos.html">Videos</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
@@ -34,8 +140,8 @@
         <div class="container">
             <h1>Frequently Asked Questions</h1>
             <div class="faq-item">
-                <h3>What is Anime Clips Raw?</h3>
-                <p>Anime Clips Raw is a platform dedicated to providing high-quality raw anime clips, voiceovers, and more for anime enthusiasts.</p>
+                <h3>What is Anime Zone?</h3>
+                <p>Anime Zone is a platform dedicated to providing high-quality raw anime clips, voiceovers, and more for anime enthusiasts.</p>
             </div>
             <div class="faq-item">
                 <h3>How can I contact you?</h3>
@@ -43,7 +149,7 @@
             </div>
             <div class="faq-item">
                 <h3>Is the content free?</h3>
-                <p>Yes, all content on Anime Clips Raw is free to access and enjoy.</p>
+                <p>Yes, all content on Anime Zone is free to access and enjoy we just need your support.</p>
             </div>
         </div>
     </section>
@@ -51,7 +157,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Anime Clips Raw. All rights reserved.</p>
+            <p>&copy; 2025 Anime Zone. All rights reserved.</p>
             <ul class="social-icons">
                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
