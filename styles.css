@@ -67,6 +67,134 @@ body {
     margin: 0 auto;
 }
 
+/* Icon Navigation */
+.icon-nav-container {
+    background-color: #2e2e2e;
+    padding: 15px 0;
+    position: relative;
+}
+
+.icon-nav {
+    display: flex;
+    justify-content: space-around;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.icon-item i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.icon-item span {
+    font-size: 14px;
+}
+
+.icon-item:hover {
+    background-color: #e74c3c;
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 10px auto 0;
+    max-width: 800px;
+    background-color: #3a3a3a;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.submenu li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #474747;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+}
+
+.submenu a:hover {
+    color: #e74c3c;
+}
+
+.submenu.active {
+    display: block;
+}
+
+/* Mobile Navigation */
+.mobile-only {
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+    
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        background-color: #2e2e2e;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    
+    .main-nav.active {
+        display: flex;
+    }
+    
+    .main-nav li {
+        padding: 15px;
+        border-bottom: 1px solid #474747;
+    }
+    
+    .icon-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .icon-item {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .icon-item i {
+        margin-bottom: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Loading Animation */
 .loader {
     position: fixed;
