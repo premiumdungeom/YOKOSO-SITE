@@ -39,25 +39,28 @@ header {
 }
 
 /* ==================== */
-/* IMPROVED NAVIGATION */
+/* OPTIMIZED NAVIGATION */
 /* ==================== */
 nav {
     background-color: #535455;
-    padding: 0.8rem 0;
+    padding: 0.8rem 2rem; /* Restored side padding */
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-between; /* Better space distribution */
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0;
+    gap: 1rem; /* Consistent gap between items */
 }
 
 nav li {
     position: relative;
+    flex: 1; /* Equal width distribution */
+    text-align: center;
 }
 
 nav a {
@@ -65,42 +68,53 @@ nav a {
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.8rem; /* Added horizontal padding */
     white-space: nowrap;
     display: block;
+    border-radius: 4px; /* Subtle rounded corners */
 }
 
 nav a:hover {
     color: #e74c3c;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
     transform: translateY(-2px);
 }
 
 nav a.active {
     font-weight: 600;
+    color: #e74c3c;
 }
 
 nav a.active::after {
     content: '';
     position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
+    bottom: -3px;
+    left: 25%;
+    width: 50%;
     height: 2px;
     background-color: #e74c3c;
     animation: underlineGrow 0.3s ease-out;
 }
 
 @keyframes underlineGrow {
-    from { width: 0; }
-    to { width: 100%; }
+    from { width: 0; left: 50%; }
+    to { width: 50%; left: 25%; }
 }
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
+    nav {
+        padding: 0.8rem 1rem;
+    }
+    
     nav ul {
         flex-wrap: wrap;
-        gap: 1rem;
-        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+    
+    nav li {
+        flex: 1 1 45%; /* 2 items per row */
+        min-width: 120px;
     }
     
     nav a {
@@ -110,28 +124,32 @@ nav a.active::after {
     
     nav a.active::after {
         bottom: 0;
+        left: 20%;
+        width: 60%;
     }
 }
 
 /* ==================== */
-/* EXISTING CONTENT STYLES */
+/* CONTENT STYLES */
 /* ==================== */
 .main-content {
-    padding: 10px 0;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .main-content h1 {
     text-align: center;
-    margin-bottom: 65px;
+    margin-bottom: 2rem;
     font-size: 2rem;
+    color: #f0ebeb;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    text-align: center;
-    transform: translateY(-25px);
+    margin-top: 1rem;
 }
 
 .content-section {
@@ -156,7 +174,7 @@ nav a.active::after {
 }
 
 .content-section:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .content-section h3 {
