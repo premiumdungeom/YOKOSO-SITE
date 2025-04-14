@@ -9,60 +9,154 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <style>
+           /* Reset and Base Styles */
+    
+    
+    
+    /* Header Styles */
+    header {
+        background-color: #2e2e2e;
+        color: rgb(255, 255, 255);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        
+    }
+    
+    .logo span {
+        color: #e74c3c;
+    }
+    
+    .for-editor {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 35px;
+    text-align: center;
+    transform: translateY(-25px);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Hamburger Menu for Mobile */
+#menu-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Navigation */
+nav {
+    
+    padding: 0rem 0rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+    
+}
+
+nav li {
+    margin-right: 1.5rem;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+nav a:hover {
+    color: #e74c3c;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e74c3c;
+}
+
+
+    </style>
     <!-- Loading Animation -->
     <div class="loader">
         <div class="spinner"></div>
     </div>
 
-    <!-- Header -->
-    <header>
+     
+
+     <!-- Header -->
+     <header>
         <div class="logo">ANIME<span>ZONE</span></div>
-        <button id="menu-toggle" class="mobile-only"><i class="fas fa-bars"></i></button>
-        <button id="theme-toggle"><i class="fas fa-moon"></i></button>
-    </header>
-
-    <!-- Main Navigation -->
-    <nav>
-        <ul class="main-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-        </ul>
-    </nav>
-
-    <!-- Icon Navigation -->
-    <div class="icon-nav-container">
-        <div class="icon-nav">
-            <div class="icon-item" onclick="toggleSubmenu('home-menu')">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
-            </div>
-            <div class="icon-item" onclick="toggleSubmenu('anime-menu')">
-                <i class="fas fa-film"></i>
-                <span>Anime</span>
-            </div>
-            <div class="icon-item" onclick="toggleSubmenu('manga-menu')">
-                <i class="fas fa-book"></i>
-                <span>Manga</span>
-            </div>
+        
+   <!-- Header -->
+<header>
+    <div class="logo">ANIME<span>ZONE</span></div>
+    
+    <!-- Add these icon elements -->
+    <div class="header-icons">
+        <div class="icon-container">
+            <div class="icon" onclick="toggleMenu(1)"><i class="fas fa-bell"></i></div>
+            <ul class="submenu" id="menu1">
+                <li>Notifications</li>
+                <li>New Releases</li>
+                <li>Updates</li>
+            </ul>
         </div>
-
-        <ul class="submenu" id="home-menu">
-            <li><a href="#">Home</a></li>
-        </ul>
-
-        <ul class="submenu" id="anime-menu">
-            <li><a href="#">Anime Twixtor</a></li>
-            <li><a href="#">Intro for Edit</a></li>
-            <li><a href="#">Flow Frame</a></li>
-        </ul>
-
-        <ul class="submenu" id="manga-menu">
-            <li><a href="#">Anime Voice</a></li>
-            <li><a href="#">Manga Panel</a></li>
-        </ul>
+        
+        <div class="icon-container">
+            <div class="icon" onclick="toggleMenu(2)"><i class="fas fa-user"></i></div>
+            <ul class="submenu" id="menu2">
+                <li>Profile</li>
+                <li>Settings</li>
+                <li>Logout</li>
+            </ul>
+        </div>
+        
+        <div class="icon-container">
+            <div class="icon" onclick="toggleMenu(3)"><i class="fas fa-cog"></i></div>
+            <ul class="submenu" id="menu3">
+                <li>Preferences</li>
+                <li>Display</li>
+                <li>Help</li>
+            </ul>
+        </div>
     </div>
+</header>
+    <!-- Hero Section -->
 
     <!-- Hero Section -->
     <section class="hero">
@@ -72,6 +166,7 @@
             <a href="watch-in/index-watch-page.html" class="btn">Main Page</a>
         </div>
     </section>
+  
 
     <!-- Video Grid -->
     <section class="video-grid">
@@ -82,7 +177,7 @@
                 <div class="video-card">
                     <img src="assets/images/thumbnail1.jpg" alt="Video Thumbnail">
                     <h3>Latest Action Anime</h3>
-                </div>
+                    </div>
                 <div class="video-card">
                     <img src="assets/images/thumbnail2.jpg" alt="Video Thumbnail">
                     <h3>Voice Overs</h3>
@@ -95,6 +190,7 @@
                     <img src="assets/images/thumbnail4.jpg" alt="Video Thumbnail">
                     <h3>Anime Updates</h3>
                 </div>
+                <!-- Add more video cards as needed -->
             </div>
         </div>
     </section>
